@@ -1,4 +1,6 @@
 var express = require ("express")
+// cats app ddidn' have this but movies did
+var mysql = require("mysql");
 
 var PORT = process.env.PORT || 8080;
 
@@ -21,6 +23,18 @@ app.set ("view engine", "handlebars");
 var routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
+
+// may have to erase this later, it lists the table
+/* app.get("/", function(req, res) {
+    connection.query("SELECT * FROM burger;", function(err, data) {
+      if (err) {
+        return res.status(500).end();
+      }
+      // does index refer to index.handlebars?
+      res.render("index", { burger: data });
+    });
+  });
+ */
 
 //start server
 app.listen(PORT, function (){
