@@ -1,5 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
+
+$(document).ready (function() {
   $(".change-sleep").on("click", function(event) {
     var id = $(this).data("id");
     var newSleep = $(this).data("newsleep");
@@ -16,19 +17,23 @@ $(function() {
       function() {
         console.log("changed sleep to", newSleep);
         // Reload the page to get the updated list
+        //
         location.reload();
       }
     );
   });
 
-  $(".create-form").on("submit", function(event) {
+  $(document).on("click", "#add_burger", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
+   // event.stopPropagation();
 
     var newBurger = {
-      name: $("#ca").val().trim(),
+      burger_name: $("#ca").val().trim(),
+    
       //sleepy: $("[name=sleepy]:checked").val().trim()
     };
+    console.log ("new burger : " + newBurger);
 
     // Send the POST request.
     $.ajax("/api/burgers", {
@@ -38,7 +43,7 @@ $(function() {
       function() {
         console.log("created new burger");
         // Reload the page to get the updated list
-        location.reload();
+        //location.reload();
       }
     );
   });
