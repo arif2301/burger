@@ -4,25 +4,27 @@
 
 <ul>
   {{#each burgers}}
-    <p>{{this.id}}. {{this.burger_name}}</p>
-    {{#unless sleepy}}
-      	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-		{{#if devoured}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+    <p>{{this.id}}. {{this.burger_name}}
+    {{#unless devoured}}
+      	<button class="change-sleep" data-id="{{id}}" data-newsleep= "true" >
+		DEVOUR IT!
 	</button>
       {{!-- {{> cats/cat-block sleep=true}} --}}
     {{/unless}}
+    </p>
   {{/each}}
 </ul>
 
 <h2>Burgers you have eaten!</h2>
 
-{{!-- <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+
     {{/if}}
   {{/each}}
-</ul> --}}
+</ul>
 
 <h2>Add a Burger</h2>
 <form class="create-form">
