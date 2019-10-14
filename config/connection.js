@@ -2,7 +2,7 @@
 var mysql = require ("mysql");
 
 var connection;
-// check page 5
+// check page 5 of PDF, not working when i try to set up db in new sql connection
 
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -17,7 +17,7 @@ else {
     })
 }
 
-// make connection
+// catch error
 connection.connect(function (err){
     if (err) {
         console.error("error connecting: " + err.stack);

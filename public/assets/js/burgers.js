@@ -1,37 +1,33 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
+// click event for devouring the burger
 
 $(document).ready (function() {
-  $(".change-sleep").on("click", function(event) {
+  $(".change-devour").on("click", function(event) {
     var id = $(this).data("id");
-    var newSleep = $(this).data("newsleep");
+    var newDevour = $(this).data("newdevour");
 
-    var newSleepState = {
-      sleepy: newSleep
+    var newDevourState = {
+      devour: newDevour
     };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newSleepState
+      data: newDevourState
     }).then(
       function() {
-        console.log("changed sleep to", newSleep);
         // Reload the page to get the updated list
-        //
         location.reload();
       }
     );
   });
 
+  // click event for adding a new burger
   $(document).on("click", "#add_burger", function(event) {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
-   // event.stopPropagation();
 
     var newBurger = {
       burger_name: $("#ca").val().trim(),
-    
-      //sleepy: $("[name=sleepy]:checked").val().trim()
+
     };
     console.log ("new burger : " + newBurger);
 
@@ -47,19 +43,4 @@ $(document).ready (function() {
       }
     );
   });
-
-  // $(".delete-cat").on("click", function(event) {
-  //   var id = $(this).data("id");
-
-  //   // Send the DELETE request.
-  //   $.ajax("/api/burgers/" + id, {
-  //     type: "DELETE"
-  //   }).then(
-  //     function() {
-  //       console.log("deleted cat", id);
-  //       // Reload the page to get the updated list
-  //       location.reload();
-  //     }
-  //   );
-  // });
 });
