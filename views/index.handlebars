@@ -4,14 +4,16 @@
 
 <ul>
   {{#each burgers}}
-    <p>{{this.id}}. {{this.burger_name}}
+    
     {{#unless devoured}}
+      <p>{{this.id}}. {{this.burger_name}}
       	<button class="change-sleep" data-id="{{id}}" data-newsleep= "true" >
 		DEVOUR IT!
 	</button>
+    </p>
       {{!-- {{> cats/cat-block sleep=true}} --}}
     {{/unless}}
-    </p>
+    
   {{/each}}
 </ul>
 
@@ -21,7 +23,7 @@
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-
+<p>{{this.id}}. {{this.burger_name}}</p>
     {{/if}}
   {{/each}}
 </ul>

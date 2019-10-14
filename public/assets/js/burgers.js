@@ -18,7 +18,7 @@ $(document).ready (function() {
         console.log("changed sleep to", newSleep);
         // Reload the page to get the updated list
         //
-        //location.reload();
+        location.reload();
       }
     );
   });
@@ -43,7 +43,7 @@ $(document).ready (function() {
       function() {
         console.log("created new burger");
         // Reload the page to get the updated list
-        //location.reload();
+        location.reload();
       }
     );
   });

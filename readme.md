@@ -6,10 +6,10 @@
 
 
 ## Background on the code
-The application is written in JavaScript, HTML, CSS, Node, Express, ORM and Handlebars
+The application uses the following: JavaScript, HTML, CSS, Node, Express, a custom ORM and Handlebars
 
 ## Instruction
-the application is deployed, here is the link : https://friend-finder2301.herokuapp.com/
+the application is deployed, here is the link : https://eatdaburger11.herokuapp.com/
 
 Please go to the link and follow the instructions to see how this applicaiton works.
 Thank you!
